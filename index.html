@@ -10,11 +10,20 @@
   <meta property="og:title" content="永隆陞建設｜景上居 - 北屯十期頂級電梯別墅" />
   <meta property="og:description" content="十期核心 / 精品電梯店墅 / 全新完工。立即預約賞屋。" />
   <!-- ✅ 封面圖（最後一張） -->
-  <meta property="og:image" content="images/img-09-cover.jpg" />
+  <meta property="og:image" content="https://example.com/images/img-09-cover-orig.webp" />
+  <meta property="og:image:secure_url" content="https://example.com/images/img-09-cover-orig.webp" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1066" />
   <meta property="og:type" content="website" />
 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="./images/favicon.ico">
+  <meta name="theme-color" content="#101d2d">
+  <meta property="og:url" content="https://example.com/">
+  <meta name="twitter:card" content="summary_large_image" />
 
   <style>
     :root{
@@ -35,6 +44,8 @@
       color:#333;
       line-height:1.6;
     }
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;left:0;top:0;width:auto;height:auto;background:var(--yls-navy);color:#fff;padding:8px;z-index:10000;border-radius:6px}
 
     /* NAV */
     nav{
@@ -86,20 +97,19 @@
 
     /* HERO (✅ 最後一張當封面) */
     .hero{
-      background:
-        linear-gradient(rgba(16,29,45,.45), rgba(16,29,45,.45)),
-        url('images/img-09-cover.jpg') center/cover no-repeat;
       height:72vh;
       display:flex;
-      flex-direction:column;
-      justify-content:center;
       align-items:center;
-      color:#fff;
+      justify-content:center;
       text-align:center;
       padding:0 18px;
       position:relative;
       overflow:hidden;
     }
+    .hero::after{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(rgba(16,29,45,.45), rgba(16,29,45,.45)); pointer-events:none; }
+    .hero-media{ position:absolute; inset:0; z-index:0; display:block; }
+    .hero-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .hero-content{ position:relative; z-index:2; color:#fff; }
     .hero h1{
       font-size:clamp(2rem, 5vw, 3.6rem);
       letter-spacing:10px;
@@ -408,9 +418,21 @@
       .nav-links{ display:none; }
     }
   </style>
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"Organization","name":"永隆陞建設有限公司","url":"https://example.com","logo":"https://example.com/images/favicon.ico"},
+      {"@type":"WebSite","url":"https://example.com","name":"永隆陞 景上居","image":"https://example.com/images/img-09-cover-orig.webp"}
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">跳到內容</a>
   <nav>
     <a href="#top" class="logo"><i class="fa-solid fa-building"></i> 永隆陞建設</a>
     <div class="nav-links">
@@ -423,18 +445,25 @@
   </nav>
 
   <header class="hero" id="top">
-    <h1>職人建築．景上居</h1>
-    <p>十期核心 / 精品電梯店墅 / 全新完工</p>
-    <div class="hero-actions">
-      <a class="pill primary" href="tel:0424068802"><i class="fa-solid fa-phone"></i> 立即來電</a>
-      <a class="pill" href="#reserve"><i class="fa-regular fa-calendar-check"></i> 線上預約</a>
-      <a class="pill" href="https://www.facebook.com/search/top?q=%E6%B0%B8%E9%9A%86%E9%99%9E%E5%BB%BA%E8%A8%AD" target="_blank" rel="noopener">
-        <i class="fa-brands fa-facebook"></i> 粉絲專頁
-      </a>
+    <picture class="hero-media">
+      <source type="image/webp" srcset="./images/img-09-cover-480.webp 480w, ./images/img-09-cover-800.webp 800w, ./images/img-09-cover-1200.webp 1200w, ./images/img-09-cover-orig.webp 1600w" sizes="100vw">
+      <img src="./images/img-09-cover-800.jpg" srcset="./images/img-09-cover-480.jpg 480w, ./images/img-09-cover-800.jpg 800w, ./images/img-09-cover-1200.jpg 1200w, ./images/img-09-cover-orig.jpg 1600w" sizes="100vw" alt="永隆陞 景上居 封面" loading="eager" decoding="async" fetchpriority="high">
+    </picture>
+
+    <div class="hero-content">
+      <h1>職人建築．景上居</h1>
+      <p>十期核心 / 精品電梯店墅 / 全新完工</p>
+      <div class="hero-actions">
+        <a class="pill primary" href="tel:0424068802"><i class="fa-solid fa-phone"></i> 立即來電</a>
+        <a class="pill" href="#reserve"><i class="fa-regular fa-calendar-check"></i> 線上預約</a>
+        <a class="pill" href="https://www.facebook.com/search/top?q=%E6%B0%B8%E9%9A%86%E9%99%9E%E5%BB%BA%E8%A8%AD" target="_blank" rel="noopener">
+          <i class="fa-brands fa-facebook"></i> 粉絲專頁
+        </a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container">
     <!-- Main Card -->
     <div class="main-card" id="revealCard">
       <section class="gallery-wrap" aria-label="建案相簿">
@@ -507,24 +536,53 @@
     <section class="section" id="gallery">
       <h3>畫廊</h3>
       <div class="gallery">
-        <img src="./images/facade.jpg" alt="永隆陞 景上居 外觀">
-        <img src="./images/living-1.jpg" alt="客廳空間">
-        <img src="./images/living-2.jpg" alt="餐廳與客廳">
-        <img src="./images/corridor.jpg" alt="採光走廊">
-        <img src="./images/room.jpg" alt="臥室空間">
+        <picture>
+          <source type="image/webp" srcset="./images/facade-480.webp 480w, ./images/facade-800.webp 800w, ./images/facade-1200.webp 1200w, ./images/facade-orig.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+          <img src="./images/facade-800.jpg" srcset="./images/facade-480.jpg 480w, ./images/facade-800.jpg 800w, ./images/facade-1200.jpg 1200w, ./images/facade-orig.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" loading="lazy" decoding="async" alt="永隆陞 景上居 外觀">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="./images/living-1-480.webp 480w, ./images/living-1-800.webp 800w, ./images/living-1-1200.webp 1200w, ./images/living-1-orig.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+          <img src="./images/living-1-800.jpg" srcset="./images/living-1-480.jpg 480w, ./images/living-1-800.jpg 800w, ./images/living-1-1200.jpg 1200w, ./images/living-1-orig.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" loading="lazy" decoding="async" alt="客廳空間">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="./images/living-2-480.webp 480w, ./images/living-2-800.webp 800w, ./images/living-2-1200.webp 1200w, ./images/living-2-orig.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+          <img src="./images/living-2-800.jpg" srcset="./images/living-2-480.jpg 480w, ./images/living-2-800.jpg 800w, ./images/living-2-1200.jpg 1200w, ./images/living-2-orig.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" loading="lazy" decoding="async" alt="餐廳與客廳">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="./images/corridor-480.webp 480w, ./images/corridor-800.webp 800w, ./images/corridor-1200.webp 1200w, ./images/corridor-orig.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+          <img src="./images/corridor-800.jpg" srcset="./images/corridor-480.jpg 480w, ./images/corridor-800.jpg 800w, ./images/corridor-1200.jpg 1200w, ./images/corridor-orig.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" loading="lazy" decoding="async" alt="採光走廊">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="./images/room-480.webp 480w, ./images/room-800.webp 800w, ./images/room-1200.webp 1200w, ./images/room-orig.webp 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+          <img src="./images/room-800.jpg" srcset="./images/room-480.jpg 480w, ./images/room-800.jpg 800w, ./images/room-1200.jpg 1200w, ./images/room-orig.jpg 1600w" sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" loading="lazy" decoding="async" alt="臥室空間">
+        </picture>
       </div>
 
       <div style="margin-top:18px;">
         <h4>精品衛浴</h4>
         <div class="gallery" style="grid-template-columns:repeat(2,1fr);">
-          <img src="./images/bath-1.jpg" alt="乾濕分離衛浴">
-          <img src="./images/bath-2.jpg" alt="主臥衛浴與浴缸">
+          <picture>
+            <source type="image/webp" srcset="./images/bath-1-480.webp 480w, ./images/bath-1-800.webp 800w, ./images/bath-1-1200.webp 1200w, ./images/bath-1-orig.webp 1600w" sizes="(max-width:600px) 100vw, 50vw">
+            <img src="./images/bath-1-800.jpg" srcset="./images/bath-1-480.jpg 480w, ./images/bath-1-800.jpg 800w, ./images/bath-1-1200.jpg 1200w, ./images/bath-1-orig.jpg 1600w" sizes="(max-width:600px) 100vw, 50vw" loading="lazy" decoding="async" alt="乾濕分離衛浴">
+          </picture>
+
+          <picture>
+            <source type="image/webp" srcset="./images/bath-2-480.webp 480w, ./images/bath-2-800.webp 800w, ./images/bath-2-1200.webp 1200w, ./images/bath-2-orig.webp 1600w" sizes="(max-width:600px) 100vw, 50vw">
+            <img src="./images/bath-2-800.jpg" srcset="./images/bath-2-480.jpg 480w, ./images/bath-2-800.jpg 800w, ./images/bath-2-1200.jpg 1200w, ./images/bath-2-orig.jpg 1600w" sizes="(max-width:600px) 100vw, 50vw" loading="lazy" decoding="async" alt="主臥衛浴與浴缸">
+          </picture>
         </div>
       </div>
 
       <div style="margin-top:18px;">
         <h4>建案位置</h4>
-        <img src="./images/map.jpg" alt="景上居 地圖位置" style="width:100%;height:280px;object-fit:cover;border-radius:12px;border:1px solid #eef2f6;">
+        <picture>
+          <source type="image/webp" srcset="./images/map-480.webp 480w, ./images/map-800.webp 800w, ./images/map-1200.webp 1200w, ./images/map-orig.webp 1600w" sizes="100vw">
+          <img src="./images/map-800.jpg" srcset="./images/map-480.jpg 480w, ./images/map-800.jpg 800w, ./images/map-1200.jpg 1200w, ./images/map-orig.jpg 1600w" sizes="100vw" loading="lazy" decoding="async" alt="景上居 地圖位置" style="width:100%;height:280px;object-fit:cover;border-radius:12px;border:1px solid #eef2f6;">
+        </picture>
       </div>
     </section>
 
