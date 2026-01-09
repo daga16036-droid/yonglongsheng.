@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>永隆陞建設｜景上居 - 北屯十期頂級電梯別墅</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="永隆陞建設｜景上居：北屯十期核心，精品電梯店墅，全新完工。預約賞屋：04-2406-8802" />
+  <meta property="og:title" content="永隆陞建設｜景上居 - 北屯十期頂級電梯別墅" />
+  <meta property="og:description" content="十期核心 / 精品電梯店墅 / 全新完工。立即預約賞屋。" />
+  <!-- ✅ 封面圖（最後一張） -->
+  <meta property="og:image" content="https://placehold.co/1600x900?text=Cover+Image" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root{
+      --yls-gold:#c5a66d;
+      --yls-gold-dark:#a68b55;
+      --yls-navy:#101d2d;
+      --yls-light:#f4f7f9;
+      --card-shadow:0 30px 60px rgba(0,0,0,0.12);
+      --transition:all .4s cubic-bezier(.165,.84,.44,1);
+      --radius:20px;
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:'Noto Sans TC',sans-serif;
+      margin:0;
+      background:var(--yls-light);
+      color:#333;
+      line-height:1.6;
+    }
+
+    /* NAV */
+    nav{
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      padding:14px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 15px rgba(0,0,0,.05);
+    }
+    .logo{
+      font-size:1.2rem;
+      font-weight:900;
+      color:var(--yls-navy);
+      letter-spacing:3px;
+      text-decoration:none;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .nav-links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:#4a5568;
+      font-weight:700;
+      font-size:.95rem;
+      padding:10px 12px;
+      border-radius:12px;
+      transition:var(--transition);
+    }
+    .nav-links a:hover{
+      background:#eef2f6;
+      color:var(--yls-navy);
+      transform:translateY(-1px);
+    }
+    .nav-cta{
+      background:var(--yls-navy) !important;
+      color:#fff !important;
+    }
+    .nav-cta:hover{ background:#000 !important; }
+
+    /* HERO (✅ 最後一張當封面) */
+    .hero{
+      background:
+        linear-gradient(rgba(16,29,45,.45), rgba(16,29,45,.45)),
+        url('https://placehold.co/1600x900?text=Cover+Image') center/cover no-repeat;
+      height:72vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      text-align:center;
+      padding:0 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero h1{
+      font-size:clamp(2rem, 5vw, 3.6rem);
+      letter-spacing:10px;
+      margin:0 0 10px;
+      text-shadow:0 5px 20px rgba(0,0,0,.3);
+      font-weight:900;
+    }
+    .hero p{
+      margin:0 0 28px;
+      font-size:1.1rem;
+      letter-spacing:4px;
+      opacity:.95;
+    }
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:800;
+      transition:var(--transition);
+      border:1px solid rgba(255,255,255,.28);
+      color:#fff;
+      background:rgba(255,255,255,.10);
+    }
+    .pill:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.18);
+    }
+    .pill.primary{
+      background:var(--yls-gold);
+      border-color:transparent;
+      color:#fff;
+    }
+    .pill.primary:hover{ background:var(--yls-gold-dark); }
+
+    /* CONTAINER / CARD */
+    .container{
+      max-width:1300px;
+      margin:-110px auto 70px;
+      padding:0 20px;
+      position:relative;
+      z-index:10;
+    }
+    .main-card{
+      display:flex;
+      flex-wrap:wrap;
+      background:#fff;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--card-shadow);
+      opacity:0;
+      transform:translateY(30px);
+      transition:var(--transition);
+    }
+    .main-card.visible{ opacity:1; transform:translateY(0); }
+
+    /* GALLERY */
+    .gallery-wrap{
+      flex:1.4;
+      background:#0b0f14;
+      padding:20px;
+    }
+    .featured-img{
+      width:100%;
+      height:560px;
+      border-radius:14px;
+      background-size:cover;
+      background-position:center;
+      transition:opacity .35s ease, transform .35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .featured-badge{
+      position:absolute;
+      left:14px;
+      top:14px;
+      background:rgba(16,29,45,.75);
+      color:#fff;
+      padding:8px 12px;
+      border-radius:12px;
+      font-weight:800;
+      font-size:.9rem;
+      letter-spacing:2px;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .thumb-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .thumb{
+      aspect-ratio:16/10;
+      border-radius:10px;
+      cursor:pointer;
+      opacity:.55;
+      transition:var(--transition);
+      background-size:cover;
+      background-position:center;
+      border:2px solid transparent;
+      position:relative;
+    }
+    .thumb:hover, .thumb.active{
+      opacity:1;
+      border-color:var(--yls-gold);
+      transform:translateY(-2px);
+    }
+
+    /* INFO */
+    .info-box{ flex:1; padding:60px 52px; }
+    .price-tag{
+      display:inline-block;
+      background:var(--yls-gold);
+      color:#fff;
+      padding:9px 26px;
+      border-radius:8px;
+      font-weight:900;
+      font-size:1.05rem;
+      margin-bottom:18px;
+      letter-spacing:1px;
+    }
+    h2{ font-size:2.5rem; color:var(--yls-navy); margin:0; font-weight:900; }
+    .sub-title{
+      font-size:1.06rem;
+      color:var(--yls-gold-dark);
+      font-weight:900;
+      margin:10px 0 26px;
+      display:block;
+      letter-spacing:1px;
+    }
+    .specs{ list-style:none; padding:0; margin:0 0 30px; }
+    .specs li{
+      margin-bottom:14px;
+      padding-bottom:12px;
+      border-bottom:1px solid #eee;
+      display:flex;
+      gap:12px;
+    }
+    .specs b{ color:var(--yls-navy); width:92px; flex-shrink:0; }
+    .specs span{ color:#667085; font-weight:600; }
+
+    .actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:900;
+      transition:var(--transition);
+      border:1px solid #e9eef5;
+    }
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(0,0,0,.10);
+    }
+    .btn-call{ background:var(--yls-navy); color:#fff; border-color:transparent; }
+    .btn-call:hover{ background:#000; }
+    .btn-fb{ background:#f0f2f5; color:#1877F2; }
+
+    /* SECTIONS */
+    .section{
+      margin-top:26px;
+      padding:36px 28px;
+      background:#fff;
+      border-radius:var(--radius);
+      box-shadow:0 18px 40px rgba(0,0,0,.08);
+      opacity:0;
+      transform:translateY(22px);
+      transition:var(--transition);
+    }
+    .section.visible{ opacity:1; transform:translateY(0); }
+    .section h3{
+      margin:0 0 14px;
+      font-size:1.6rem;
+      color:var(--yls-navy);
+      font-weight:900;
+      letter-spacing:1px;
+    }
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 0; }
+    .chip{
+      background:#f6f8fb;
+      border:1px solid #e9eef5;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:800;
+      color:#445;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:14px;
+    }
+    .card{
+      border:1px solid #eef2f6;
+      background:#fbfcfe;
+      border-radius:18px;
+      padding:18px;
+    }
+    .card h4{
+      margin:0 0 6px;
+      color:var(--yls-navy);
+      font-weight:900;
+    }
+    .muted{ color:#6b7280; font-weight:600; }
+
+    /* MAP */
+    .map-embed{
+      width:100%;
+      height:380px;
+      border:0;
+      border-radius:18px;
+      overflow:hidden;
+    }
+
+    /* FORM */
+    form{ display:grid; gap:12px; margin-top:12px; }
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    input, textarea{
+      width:100%;
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid #e7edf4;
+      font:inherit;
+      outline:none;
+      transition:var(--transition);
+      background:#fff;
+    }
+    input:focus, textarea:focus{
+      border-color:rgba(197,166,109,.8);
+      box-shadow:0 0 0 4px rgba(197,166,109,.18);
+    }
+    textarea{ min-height:110px; resize:vertical; }
+    .submit{
+      background:var(--yls-gold);
+      color:#fff;
+      border:0;
+      padding:14px 16px;
+      border-radius:14px;
+      font-weight:900;
+      cursor:pointer;
+      transition:var(--transition);
+    }
+    .submit:hover{ background:var(--yls-gold-dark); transform:translateY(-2px); }
+
+    /* FOOTER */
+    footer{
+      background:var(--yls-navy);
+      color:#a0aab5;
+      padding:60px 20px;
+      text-align:center;
+      font-size:.92rem;
+      margin-top:60px;
+    }
+    footer p{ margin:6px 0; }
+
+    /* Responsive */
+    @media (max-width: 992px){
+      .main-card{ flex-direction:column; }
+      .featured-img{ height:360px; }
+      .info-box{ padding:40px 24px; }
+      .actions{ grid-template-columns:1fr; }
+      .grid-2{ grid-template-columns:1fr; }
+      .row{ grid-template-columns:1fr; }
+      nav{ padding:12px 5%; }
+      .nav-links{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#top" class="logo"><i class="fa-solid fa-building"></i> 永隆陞建設</a>
+    <div class="nav-links">
+      <a href="#project">建案資訊</a>
+      <a href="#highlights">建案亮點</a>
+      <a href="#plan">規劃格局</a>
+      <a href="#map">地圖位置</a>
+      <a href="#reserve" class="nav-cta">預約賞屋</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1>職人建築．景上居</h1>
+    <p>十期核心 / 精品電梯店墅 / 全新完工</p>
+    <div class="hero-actions">
+      <a class="pill primary" href="tel:0424068802"><i class="fa-solid fa-phone"></i> 立即來電</a>
+      <a class="pill" href="#reserve"><i class="fa-regular fa-calendar-check"></i> 線上預約</a>
+      <a class="pill" href="https://www.facebook.com/search/top?q=%E6%B0%B8%E9%9A%86%E9%99%9E%E5%BB%BA%E8%A8%AD" target="_blank" rel="noopener">
+        <i class="fa-brands fa-facebook"></i> 粉絲專頁
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Main Card -->
+    <div class="main-card" id="revealCard">
+      <section class="gallery-wrap" aria-label="建案相簿">
+        <!-- ✅ 主圖：第一張 -->
+        <div id="main-view" class="featured-img" style="background-image:url('https://placehold.co/1200x760?text=Image+1')">
+          <div class="featured-badge">景上居｜實景 / 示意</div>
+        </div>
+
+        <!-- ✅ 縮圖：加入你上傳的所有圖片（封面圖不放在相簿） -->
+        <div class="thumb-grid" id="thumbGrid">
+          <div class="thumb active" data-url="https://placehold.co/1200x760?text=Image+1" style="background-image:url('https://placehold.co/400x250?text=Image+1')"></div>
+          <div class="thumb" data-url="https://placehold.co/1200x760?text=Image+2" style="background-image:url('https://placehold.co/400x250?text=Image+2')"></div>
+          <div class="thumb" data-url="https://placehold.co/1200x760?text=Image+3" style="background-image:url('https://placehold.co/400x250?text=Image+3')"></div>
+          <div class="thumb" data-url="https://placehold.co/1200x760?text=Image+4" style="background-image:url('https://placehold.co/400x250?text=Image+4')"></div>
+          <div class="thumb" data-url="https://placehold.co/1200x760?text=Image+5" style="background-image:url('https://placehold.co/400x250?text=Image+5')"></div>
+          <div class="thumb" data-url="https://placehold.co/1200x760?text=Image+6" style="background-image:url('https://placehold.co/400x250?text=Image+6')"></div>
+          <div class="thumb" data-url="https://placehold.co/1200x760?text=Image+7" style="background-image:url('https://placehold.co/400x250?text=Image+7')"></div>
+          <div class="thumb" data-url="https://placehold.co/1200x760?text=Image+8" style="background-image:url('https://placehold.co/400x250?text=Image+8')"></div>
+        </div>
+
+        <p class="muted" style="margin:14px 2px 0; color:#b6c0cc;">
+          小提醒：可用鍵盤 ← / → 切換照片（電腦）或點縮圖切換
+        </p>
+      </section>
+
+      <section class="info-box" id="project" aria-label="建案資訊">
+        <span class="price-tag">總價 7,980 萬起</span>
+        <h2>永隆陞 景上居</h2>
+        <span class="sub-title">職人手作．頂級石材外觀</span>
+
+        <ul class="specs">
+          <li><b>建案位置</b> <span>台中市北屯區松竹五路二段</span></li>
+          <li><b>產品規劃</b> <span>地 35 坪 / 建 117 坪 / 5層樓</span></li>
+          <li><b>室內空間</b> <span>5 大房 / 3 廳 / 7 衛</span></li>
+          <li><b>特色說明</b> <span>配備高級電梯、精品廚具衛浴</span></li>
+        </ul>
+
+        <div class="actions">
+          <a href="tel:0424068802" class="btn btn-call"><i class="fa-solid fa-phone"></i> 預約賞屋</a>
+          <a href="https://www.facebook.com/search/top?q=%E6%B0%B8%E9%9A%86%E9%99%9E%E5%BB%BA%E8%A8%AD" target="_blank" rel="noopener" class="btn btn-fb">
+            <i class="fa-brands fa-facebook-f"></i> 粉絲專頁
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Highlights -->
+    <section class="section" id="highlights">
+      <h3>建案亮點</h3>
+      <div class="chips">
+        <div class="chip"><i class="fa-solid fa-elevator"></i> 電梯規劃</div>
+        <div class="chip"><i class="fa-solid fa-gem"></i> 精品廚衛</div>
+        <div class="chip"><i class="fa-solid fa-mountain-sun"></i> 十期核心地段</div>
+        <div class="chip"><i class="fa-solid fa-shield-heart"></i> 職人工法</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h4>外觀與用料</h4>
+          <p class="muted">以耐候與質感為核心，呈現俐落、沉穩的高級立面。可依實際案場補充：石材、格柵、燈光等規格。</p>
+        </div>
+        <div class="card">
+          <h4>生活機能</h4>
+          <p class="muted">近松竹商圈、交通與採買便利，住家動線與停車使用更友善。可補上：學區 / 公園 / 交通節點。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan -->
+    <section class="section" id="plan">
+      <h3>規劃格局</h3>
+      <div class="grid-2">
+        <div class="card">
+          <h4>空間配置</h4>
+          <p class="muted">5大房 / 3廳 / 7衛｜5層樓，適合三代同堂與重視隱私的家庭型買方。</p>
+        </div>
+        <div class="card">
+          <h4>坪數資訊</h4>
+          <p class="muted">地 35 坪 / 建 117 坪（依實際現場與權狀為準）。可加入車位數、面寬、臨路等資訊。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="section" id="map">
+      <h3>地圖位置</h3>
+      <p class="muted">你可以把下面的地圖改成「接待中心」或「建案地址」的精準定位（把 query 換成你的地址即可）。</p>
+
+      <iframe
+        class="map-embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8C%97%E5%B1%AF%E5%8D%80%E6%9D%BE%E7%AB%B9%E4%BA%94%E8%B7%AF%E4%BA%8C%E6%AE%B5&output=embed">
+      </iframe>
+    </section>
+
+    <!-- Reserve -->
+    <section class="section" id="reserve">
+      <h3>線上預約賞屋</h3>
+      <p class="muted">填寫後會顯示送出成功提示（目前為前端示範）。若你要「真的收到表單」，我可以幫你改成串 Google 表單或你的後端 API。</p>
+
+      <form id="reserveForm">
+        <div class="row">
+          <input required name="name" placeholder="您的姓名" />
+          <input required name="phone" placeholder="聯絡電話" inputmode="tel" />
+        </div>
+        <div class="row">
+          <input name="line" placeholder="LINE ID（選填）" />
+          <input name="time" placeholder="方便聯絡時段（選填）例如：晚上 7-9 點" />
+        </div>
+        <textarea name="message" placeholder="留言（選填）例如：想看哪一戶型、預計到訪日期..."></textarea>
+        <button class="submit" type="submit"><i class="fa-solid fa-paper-plane"></i> 送出預約</button>
+        <div id="formMsg" class="muted" style="display:none;"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>永隆陞建設有限公司</p>
+    <p>接待中心：台中市大里區永隆路377號1樓</p>
+    <p style="margin-top:18px; opacity:.55;">&copy; 2026 YONG LONG SHENG. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // --- Gallery data & helpers ---
+    const thumbs = Array.from(document.querySelectorAll(".thumb"));
+    const main = document.getElementById("main-view");
+    let currentIndex = thumbs.findIndex(t => t.classList.contains("active"));
+    if (currentIndex === -1) currentIndex = 0;
+
+    function setActive(index){
+      index = (index + thumbs.length) % thumbs.length; // 環繞
+      const url = thumbs[index].dataset.url;
+      main.style.opacity = "0";
+      main.style.transform = "scale(1.01)";
+      setTimeout(() => {
+        main.style.backgroundImage = `url('${url}')`;
+        main.style.opacity = "1";
+        main.style.transform = "scale(1)";
+      }, 220);
+
+      thumbs.forEach(t => t.classList.remove("active"));
+      thumbs[index].classList.add("active");
+      currentIndex = index;
+    }
+
+    // Click thumbnails
+    thumbs.forEach((t, i) => {
+      t.addEventListener("click", () => setActive(i));
+      // accessibility: allow keyboard focus + Enter / Space to activate
+      t.setAttribute("tabindex", "0");
+      t.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setActive(i);
+        }
+      });
+    });
+
+    // Keyboard arrows (ignore when typing in inputs)
+    window.addEventListener("keydown", (e) => {
+      const activeEl = document.activeElement;
+      const isTyping = activeEl && (activeEl.tagName === "INPUT" || activeEl.tagName === "TEXTAREA");
+      if (isTyping) return;
+
+      if (e.key === "ArrowLeft") setActive(currentIndex - 1);
+      if (e.key === "ArrowRight") setActive(currentIndex + 1);
+    });
+
+    // Touch swipe support (basic)
+    let touchStartX = 0;
+    let touchEndX = 0;
+    main.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    main.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const delta = touchEndX - touchStartX;
+      if (Math.abs(delta) > 40) {
+        if (delta > 0) setActive(currentIndex - 1);
+        else setActive(currentIndex + 1);
+      }
+    });
+
+    // Reveal animations (IntersectionObserver)
+    const ioOptions = { threshold: 0.12 };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, ioOptions);
+
+    document.querySelectorAll(".main-card, .section").forEach(el => io.observe(el));
+
+    // Simple form submit handling (front-end demo)
+    const form = document.getElementById("reserveForm");
+    const formMsg = document.getElementById("formMsg");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // Basic validation: required fields already set via HTML required attributes
+      const data = new FormData(form);
+      form.querySelector(".submit").disabled = true;
+      formMsg.style.display = "block";
+      formMsg.textContent = "送出中…";
+
+      // 模擬非同步送出（如要串接 Google 表單或 API，改這裡）
+      setTimeout(() => {
+        formMsg.textContent = "已送出！我們會儘快與您聯絡。謝謝您的預約 🙂";
+        form.reset();
+        form.querySelector(".submit").disabled = false;
+        // 3 秒後隱藏訊息
+        setTimeout(() => formMsg.style.display = "none", 3000);
+      }, 900);
+    });
+
+    // 初始 reveal（如果元素已在 viewport）
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".main-card, .section").forEach(el => {
+        // 若較小螢幕、或 instant 展示
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("visible");
+      });
+    });
+  </script>
+</body>
+</html>
