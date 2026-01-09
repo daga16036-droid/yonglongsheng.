@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>永隆陞｜景上居 — 預約賞屋</title>
+  <meta name="description" content="永隆陞 景上居 — 北屯十期精品電梯別墅，預約賞屋、查看建案特色與照片。">
+
+  <!-- Social / SEO -->
+  <meta property="og:title" content="永隆陞｜景上居 — 預約賞屋">
+  <meta property="og:description" content="北屯十期精品電梯店墅，立即預約賞屋。">
+  <meta property="og:image" content="https://daga16036-droid.github.io/yonglongsheng./images/img-09-cover-orig.webp">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="./images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{ --bg:#f4f6f8; --navy:#101d2d; --gold:#c5a66d; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans TC',sans-serif;margin:0;background:var(--bg);color:#222}
+    .skip-link{position:absolute;left:-999px} .skip-link:focus{position:static;left:12px;top:12px;background:var(--navy);color:#fff;padding:8px;border-radius:6px}
+    header{position:relative;height:64vh;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden}
+    .hero-media{position:absolute;inset:0;z-index:0}
+    .hero-media img{width:100%;height:100%;object-fit:cover}
+    .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,29,45,.45),rgba(16,29,45,.45));z-index:1}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:0 20px}
+    .hero h1{font-size:clamp(1.6rem,5vw,2.6rem);letter-spacing:6px;margin:0 0 8px}
+    .hero p{margin:0 0 20px;opacity:.95}
+    .cta{display:inline-flex;gap:10px}
+    .btn{padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:800}
+    .btn.primary{background:var(--gold);color:#fff}
+    section{max-width:1100px;margin:36px auto;padding:0 18px}
+    h2{font-size:1.4rem;border-left:6px solid var(--gold);padding-left:12px;margin-bottom:12px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+    .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.06)}
+    footer{background:#101d2d;color:#c9d2da;padding:28px;text-align:center;margin-top:28px}
+    @media (max-width:720px){ header{height:48vh}.gallery img{height:160px} }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到內容</a>
+
+  <header>
+    <picture class="hero-media">
+      <source type="image/webp" srcset="./images/img-09-cover-480.webp 480w, ./images/img-09-cover-800.webp 800w, ./images/img-09-cover-orig.webp 1600w" sizes="100vw">
+      <img src="./images/img-09-cover-800.jpg" alt="景上居 封面" loading="eager" decoding="async" fetchpriority="high">
+    </picture>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="hero-content" role="banner">
+      <h1>永隆陞｜景上居</h1>
+      <p>北屯十期｜精品電梯店墅 ‧ 預約賞屋中</p>
+      <div class="cta">
+        <a class="btn primary" href="tel:0424068802">立即來電</a>
+        <a class="btn" href="#reserve">線上預約</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="gallery-title">
+      <h2 id="gallery-title">畫廊</h2>
+      <div class="gallery" aria-live="polite">
+        <picture>
+          <source type="image/webp" srcset="./images/facade-480.webp 480w, ./images/facade-800.webp 800w, ./images/facade-1200.webp 1200w" sizes="(max-width:600px) 100vw, 33vw">
+          <img src="./images/facade-800.jpg" alt="建案外觀" loading="lazy" decoding="async">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="./images/living-1-480.webp 480w, ./images/living-1-800.webp 800w" sizes="(max-width:600px) 100vw, 33vw">
+          <img src="./images/living-1-800.jpg" alt="客廳空間" loading="lazy" decoding="async">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="./images/living-2-480.webp 480w, ./images/living-2-800.webp 800w" sizes="(max-width:600px) 100vw, 33vw">
+          <img src="./images/living-2-800.jpg" alt="餐廳與客廳" loading="lazy" decoding="async">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="./images/bath-1-480.webp 480w, ./images/bath-1-800.webp 800w" sizes="(max-width:600px) 100vw, 33vw">
+          <img src="./images/bath-1-800.jpg" alt="衛浴" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </section>
+
+    <section aria-labelledby="features-title">
+      <h2 id="features-title">建案亮點</h2>
+      <div class="features">
+        <div class="card"><strong>電梯規劃</strong><p class="muted">住家搭配高規格電梯系統，便利安全。</p></div>
+        <div class="card"><strong>精品廚衛</strong><p class="muted">頂級配件與石材選用，提升居住質感。</p></div>
+        <div class="card"><strong>十期核心</strong><p class="muted">生活機能與交通樞紐方便，增值潛力佳。</p></div>
+      </div>
+    </section>
+
+    <section id="reserve" aria-labelledby="reserve-title">
+      <h2 id="reserve-title">線上預約賞屋</h2>
+      <form id="reserveForm">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:640px">
+          <input required name="name" placeholder="您的姓名">
+          <input required name="phone" placeholder="聯絡電話" inputmode="tel">
+        </div>
+        <div style="max-width:640px;margin-top:8px">
+          <textarea name="message" placeholder="想看哪一戶型或備註（選填）" rows="3"></textarea>
+        </div>
+        <div style="margin-top:12px">
+          <button type="submit" class="btn primary">送出預約</button>
+        </div>
+        <div id="formMsg" style="display:none;margin-top:8px;color:#666"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>永隆陞建設有限公司 · 接待中心：台中市大里區永隆路377號</p>
+    <p>&copy; 2026 YONG LONG SHENG</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('reserveForm');
+    const msg = document.getElementById('formMsg');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      msg.style.display='block'; msg.textContent='送出中…';
+      setTimeout(()=>{ msg.textContent='已送出！我們會儘快聯絡您。'; form.reset(); setTimeout(()=>msg.style.display='none',3000)},900);
+    });
+  </script>
+</body>
+</html>
